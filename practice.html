@@ -1,53 +1,94 @@
-<!DOCTYPE html>
-	<html>
-	<head>
-		<title>Studying JS - Calculadora</title>
-		<meta charset="utf-8">
+    <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Studying JS - Calculadora</title>
+            <meta charset="utf-8">
 
-		<script type="text/javascript">
-			window.onload = function () {
-				var number1 = document.getElementById('number1');
-				var number2 = document.getElementById('number2');
-				var button = document.getElementById('button');
-				var select = document.getElementById('select');
+            <script type="text/javascript">
+                window.onload = function () {
+                    var number1 = document.getElementById('number1');
+                    var number2 = document.getElementById('number2');
+                    var button = document.getElementById('button');
+                    var select = document.getElementById('select');
+                    var result = document.getElementById('result');
 
-				button.onclick = function() {
-					if (number1.value === "" || number2.value === "") {
-						alert('Há campos de entrada vazios!');
-                        window.location.reload(1);
+                    button.onclick = function() {
+                        if (number1.value === "" || number2.value === "") {
+                            alert('Há campos de entrada vazios!');
+                            window.location.reload(1);
 
-					} else if (isNaN(number1.value) || isNaN(number2.value)) {
-						alert('Valores de entrada devem ser numéricos!');
-                        window.location.reload(1);
-					
-					} else if (select.value ==='0'){
-						alert('Selecione a operação a ser realizada!');
-                        window.location.reload(1);
-					}
-				};
+                        } else if (isNaN(number1.value) || isNaN(number2.value)) {
+                            alert('Valores de entrada devem ser numéricos!');
+                            window.location.reload(1);
 
-			};
+                        } else if (select.value ==='0'){
+                            alert('Selecione a operação a ser realizada!');
+                            window.location.reload(1);
 
-		</script>
-	</head>
-	<body>
-		<h3>Adicione o primeiro valor:</h3>
-		<input id="number1" type="text" name="number1">
+                        } else {
+                            switch(select.value) {
+                                case "1":
+                                    var valor = parseFloat(number1.value) + parseFloat(number2.value);
+                                    console.log(valor);
+                                    break;
 
-		<h3>Adicione o segundo valor:</h3>
-		<input id="number2" type="text" name="number2">
+                                case "2":
+                                    var valor = parseFloat(number1.value) - parseFloat(number2.value);
+                                    console.log(valor);
+                                    break; 
 
-		<h3>Selecione a operação: </h3>
-		<select id="select" style="width: 110px">
-			<option value="0">Selecione</option>>
-			<option value="1">Adição</option>
-			<option value="2">Subtração</option>
-			<option value="3">Multiplicação</option>
-			<option value="4">Divisão</option>
-		</select>
+                                case "3":
+                                    var valor = parseFloat(number1.value) * parseFloat(number2.value);
+                                    console.log(valor);
+                                    break; 
+                                    
+                                case "4":
+                                    var valor = parseFloat(number1.value) / parseFloat(number2.value);
+                                    console.log(valor);
+                                    break;       
 
-		<br/>
+                                default:
+                                    alert('Aconteceu algo inesperado. Não foi possível finalizar essa operação.');
+                                    break;
+                                   }  
 
-		<button id="button" style="width: 100px; margin-top: 20px">Calcular</button>
-	</body>
-	</html>
+                                   result.textContent = "Resultado = " + valor;                          
+        
+                                }
+                        };
+
+                        
+                    
+                    console.log(result.textContent);
+
+                };
+
+            </script>
+        </head>
+        <body>
+            <h3>Adicione o primeiro valor:</h3>
+            <input id="number1" type="text" name="number1">
+
+            <h3>Adicione o segundo valor:</h3>
+            <input id="number2" type="text" name="number2">
+
+            <h3>Selecione a operação: </h3>
+            <select id="select" style="width: 110px">
+                <option value="0">Selecione</option>>
+                <option value="1">Adição</option>
+                <option value="2">Subtração</option>
+                <option value="3">Multiplicação</option>
+                <option value="4">Divisão</option>
+            </select>
+
+            <br/>
+
+            <button id="button" style="width: 100px; margin-top: 20px; margin-bottom: 20px">Calcular</button>
+            
+            <br/>
+            
+            <h1 id="result" style="color: red">Resultado = ???</h1>
+            
+            
+        </body>
+        </html>
