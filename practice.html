@@ -14,12 +14,15 @@
 				button.onclick = function() {
 					if (number1.value === "" || number2.value === "") {
 						alert('Há campos de entrada vazios!');
+                        window.location.reload(1);
 
 					} else if (isNaN(number1.value) || isNaN(number2.value)) {
 						alert('Valores de entrada devem ser numéricos!');
+                        window.location.reload(1);
 					
 					} else if (select.value ==='0'){
 						alert('Selecione a operação a ser realizada!');
+                        window.location.reload(1);
 					}
 				};
 
