@@ -18,6 +18,7 @@
     function calcularFunction() {
 
         let cond = false;
+        let valor;
 
         if (number1.value === "" || number2.value === "") {
             alert('Há campos de entrada vazios!');
@@ -35,22 +36,22 @@
 
             switch(select.value) {
                 case "1":
-                    var valor = parseFloat(number1.value) + parseFloat(number2.value);
+                    valor = parseFloat(number1.value) + parseFloat(number2.value);
                     console.log(valor);
                     break;
 
                 case "2":
-                    var valor = parseFloat(number1.value) - parseFloat(number2.value);
+                    valor = parseFloat(number1.value) - parseFloat(number2.value);
                     console.log(valor);
                     break; 
 
                 case "3":
-                    var valor = parseFloat(number1.value) * parseFloat(number2.value);
+                    valor = parseFloat(number1.value) * parseFloat(number2.value);
                     console.log(valor);
                     break; 
                                         
                 case "4":
-                    var valor = parseFloat(number1.value) / parseFloat(number2.value);
+                    valor = parseFloat(number1.value) / parseFloat(number2.value);
                     console.log(valor);
                     break;       
 
@@ -62,7 +63,7 @@
             } // switch  
 
                 if (cond) {
-                    result.textContent = "Resultado = " + valor;
+                    result.textContent = "Resultado = " + valor.toFixed(2);
                 }
                                               
             
