@@ -11,10 +11,7 @@
 
     }
 
-    function Iniciar() {
-
-    }// function
-
+    
     function calcularFunction() {
 
         let cond = false;
@@ -28,29 +25,29 @@
             alert('Valores de entrada devem ser numéricos!');
             window.location.reload(1);
 
-        } else if (select.value ==='0'){
+        } else if (select.options.selectedIndex === 0){
             alert('Selecione a operação a ser realizada!');
 
         } else {
             cond = true;
 
-            switch(select.value) {
-                case "1":
+            switch(select.options.selectedIndex) {
+                case 1:
                     valor = parseFloat(number1.value) + parseFloat(number2.value);
                     console.log(valor);
                     break;
 
-                case "2":
+                case 2:
                     valor = parseFloat(number1.value) - parseFloat(number2.value);
                     console.log(valor);
                     break; 
 
-                case "3":
+                case 3:
                     valor = parseFloat(number1.value) * parseFloat(number2.value);
                     console.log(valor);
                     break; 
                                         
-                case "4":
+                case 4:
                     valor = parseFloat(number1.value) / parseFloat(number2.value);
                     console.log(valor);
                     break;       
