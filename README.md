@@ -1,8 +1,8 @@
 ## Praticando JavaScript
-Exemplos em JavaScript puro e JQuery
+Exemplos em JavaScript puro
 
 
 ------------------------------- 
 
 ## Practicing JavaScript
-Samples in pure JavaScript and JQuery
+Samples in pure JavaScript
