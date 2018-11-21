@@ -55,7 +55,9 @@ $(document).ready(function() {
             } //switch
 
             if (cond) {
-            $('#result').text("Resultado = " + valor.toFixed(2));
+                $('#result').text("Resultado = " + valor.toFixed(2)).fadeIn('slow')
+                .delay(4000)
+                .fadeOut("slow");
             }
                         
         } // if - else
@@ -67,7 +69,7 @@ $(document).ready(function() {
 
         $('#number1').val("");
         $('#number2').val("");
-        $('#result').text("Resultado = ???");
+        $('#result').text("Resultado = ???").css('color', 'red');
     
     } //function
                     
